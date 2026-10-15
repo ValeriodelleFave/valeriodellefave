@@ -1,0 +1,61 @@
+---
+// Qui puoi inserire logica JavaScript/TypeScript se ti serve
+const title = "Il mio Giardino Digitale";
+const role = "Team Leader & Developer Angular";
+const university = "Studente alla Sapienza - Informatica";
+---
+
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<style>
+			body {
+				font-family: system-ui, -apple-system, sans-serif;
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 2rem;
+				line-height: 1.6;
+				background-color: #0f172a;
+				color: #f8fafc;
+			}
+			header {
+				margin-bottom: 3rem;
+				border-bottom: 1px solid #334155;
+				padding-bottom: 1.5rem;
+			}
+			h1 {
+				font-size: 2.5rem;
+				margin-bottom: 0.5rem;
+				color: #38bdf8;
+			}
+			.tagline {
+				font-size: 1.2rem;
+				color: #94a3b8;
+			}
+			.card {
+				background: #1e293b;
+				border: 1px solid #334155;
+				padding: 1.5rem;
+				border-radius: 8px;
+				margin-bottom: 1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>{title}</h1>
+			<p class="tagline">{role} | {university}</p>
+		</header>
+		
+		<main>
+			<section class="card">
+				<h2>Benvenuto nel mio spazio</h2>
+				<p>Questo è il mio giardino digitale in costruzione, realizzato con Astro. Qui racconterò la mia esperienza con Angular, la gestione dei team e il mio percorso universitario.</p>
+			</section>
+		</main>
+	</body>
+</html>
