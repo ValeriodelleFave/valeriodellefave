@@ -1,9 +1,13 @@
 ---
-// Qui puoi inserire logica JavaScript/TypeScript se ti serve
+// pages/index.astro
+import '../styles/utils.css';
+
 const title = "Il mio Giardino Digitale";
 const role = "Team Leader & Developer Angular";
 const university = "Studente alla Sapienza - Informatica";
-import '../styles/utils.css';
+
+// Recuperiamo il base path per i link (evita l'errore 404 su GitHub Pages)
+const basePath = import.meta.env.BASE_URL;
 ---
 
 <html lang="it">
@@ -13,6 +17,18 @@ import '../styles/utils.css';
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<style>
+			.nav-link {
+				color: #38bdf8;
+				text-decoration: none;
+			}
+			.nav-link:hover {
+				text-decoration: underline;
+			}
+			.nav-section {
+				margin-top: 2rem;
+			}
+		</style>
 	</head>
 	<body>
 		<header>
@@ -22,14 +38,31 @@ import '../styles/utils.css';
 		
 		<main>
 			<section class="card">
-				<h2>Benvenuto nel mio spazio</h2>
-				<p>Questo è il mio giardino digitale in costruzione, realizzato con Astro. Qui racconterò la mia esperienza con Angular, la gestione dei team e il mio percorso universitario.</p>
+				<h2 style="margin-top: 0;">Benvenuto nel mio spazio</h2>
+				<p style="margin-bottom: 0;">
+					Questo è il mio giardino digitale in costruzione, realizzato con Astro. 
+					Qui racconterò la mia esperienza con Angular, la gestione dei team e il mio percorso universitario.
+				</p>
+			</section>
+
+			<!-- Trasformiamo il footer in una vera sezione di navigazione con le card -->
+			<section class="nav-section">
+				<h2>Esplora il sito</h2>
+				
+				<div class="card">
+					<h3 style="margin-top: 0; margin-bottom: 0.5rem;">
+						👨‍💻 <a href={`${basePath}/portfolio`} class="nav-link">Portfolio</a>
+					</h3>
+					<p style="margin: 0; color: #cbd5e1;">Scopri chi sono, le mie competenze e i progetti su cui ho lavorato.</p>
+				</div>
+				
+				<div class="card">
+					<h3 style="margin-top: 0; margin-bottom: 0.5rem;">
+						📝 <a href={`${basePath}/blog`} class="nav-link">Blog</a>
+					</h3>
+					<p style="margin: 0; color: #cbd5e1;">Leggi i miei appunti, riflessioni e articoli sul mondo dello sviluppo.</p>
+				</div>
 			</section>
 		</main>
-		<footer class="card">
-			<h2>Sezioni:</h2>
-			<p>Read more <a href="valeriodellefave/portfolio/">about</a> me!</p>
-			<p>Read more <a href="valeriodellefave/blog/">about</a> my blog!</p>
-		</footer>
 	</body>
 </html>

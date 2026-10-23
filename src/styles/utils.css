@@ -28,3 +28,35 @@
 				border-radius: 8px;
 				margin-bottom: 1rem;
 			}
+			      /* Stili specifici per il portfolio che si aggiungono a utils.css */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #38bdf8;
+        color: #0f172a;
+        padding: 8px;
+        z-index: 100;
+        text-decoration: none;
+      }
+      .skip-link:focus {
+        top: 0;
+      }
+      .projects-list {
+        list-style: none;
+        padding: 0;
+      }
+      a {
+        color: #38bdf8;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .footer {
+        margin-top: 3rem;
+        border-top: 1px solid #334155;
+        padding-top: 1.5rem;
+        text-align: center;
+        color: #94a3b8;
+      }

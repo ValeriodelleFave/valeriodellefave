@@ -1,0 +1,91 @@
+---
+// pages/portfolio.astro
+import '../../styles/utils.css';
+
+const title = "Portfolio | Valerio delle Fave";
+
+// Trasformiamo i progetti in un array per generare l'HTML dinamicamente
+const projects = [
+  {
+    name: "Weather App",
+    url: "https://valeriodellefave.github.io/weather/",
+    description: "Un'applicazione per consultare le previsioni meteorologiche in tempo reale."
+  },
+  {
+    name: "CMS Admin Panel",
+    url: "https://valeriodellefave.github.io/CMS/admin/admin.html",
+    description: "Un'interfaccia di amministrazione personalizzata per la gestione dei contenuti (CMS)."
+  },
+  {
+    name: "Blog Personale",
+    url: "https://valeriodellefave.github.io/blog/index.html",
+    description: "Il mio spazio web dedicato ad articoli, riflessioni e novità sul mondo dello sviluppo."
+  },
+  {
+    name: "Budget Manager",
+    url: "https://valeriodellefave.github.io/budget-manager/",
+    description: "Uno strumento utile per monitorare e gestire le finanze e le spese personali."
+  },
+  {
+    name: "My Vehicles",
+    url: "https://valeriodellefave.github.io/my-vehicles/home.html",
+    description: "Un'applicazione dedicata alla gestione e al monitoraggio dei propri veicoli."
+  }
+];
+---
+
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
+    
+    <header class="header">
+      <h1>Portfolio</h1>
+      <!-- Se vuoi puoi aggiungere un link per tornare al blog qui -->
+    </header>
+
+    <main id="main-content">
+      <section class="card">
+        <h2 style="margin-top: 0;">Chi sono</h2>
+        <p style="margin-bottom: 0;">
+          Mi chiamo Valerio delle Fave, sono un appassionato di tecnologia e
+          sviluppo software. Ho esperienza in vari linguaggi di programmazione e
+          mi piace lavorare su progetti innovativi.
+        </p>
+      </section>
+
+      <h2>Progetti</h2>
+      <ul class="projects-list">
+        {projects.map((project) => (
+          <li class="card">
+            <h3 style="margin-top: 0; margin-bottom: 0.5rem;">
+              <a href={project.url} target="_blank" class="project-title">
+                {project.name}
+              </a>
+            </h3>
+            <p style="margin: 0; color: #cbd5e1;">{project.description}</p>
+          </li>
+        ))}
+      </ul>
+
+      <section class="card">
+        <h2 style="margin-top: 0;">Contatti</h2>
+        <p style="margin-bottom: 0;">
+          <span>Puoi contattarmi tramite email a </span>
+          <a href="mailto:valerio.dellefave00@gmail.com">valerio.dellefave00@gmail.com</a>
+          <span> o attraverso il mio profilo </span>
+          <a href="https://www.linkedin.com/in/valerio-delle-fave" target="_blank">LinkedIn</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p style="margin: 0;">&copy; {new Date().getFullYear()} Valerio delle Fave. Tutti i diritti riservati.</p>
+    </footer>
+  </body>
+</html>
