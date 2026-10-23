@@ -1,8 +1,8 @@
-name: Deploy to GitHub Pages
+name: Deploy Astro site to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main ] # Update this if your default branch is 'master'
   workflow_dispatch:
 
 permissions:
@@ -14,13 +14,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout your repository
         uses: actions/checkout@v4
-      
       - name: Install, build, and upload your site
         uses: withastro/action@v3
-        with:
-          package-manager: npm@latest
+        # The action automatically detects your package manager (npm, yarn, pnpm) 
+        # based on your lockfile.
 
   deploy:
     needs: build
@@ -32,3 +31,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        
